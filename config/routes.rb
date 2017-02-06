@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :profiles, only: [:index, :show, :new, :create, :update]
   resources :families, only: [:show, :new, :create, :update]
 
   namespace :admin do
