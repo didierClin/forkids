@@ -218,6 +218,7 @@ PLATFORMS
 DEPENDENCIES
   administrate (~> 0.3.0)
   bootstrap-sass (~> 3.3.6)
+  bourbon
   byebug
   coffee-rails (~> 4.2)
   devise
@@ -237,4 +238,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.2
+   1.14.3
