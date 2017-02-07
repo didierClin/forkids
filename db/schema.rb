@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206151408) do
+ActiveRecord::Schema.define(version: 20170207101217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20170206151408) do
     t.string   "mother_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "families_profiles", id: false, force: :cascade do |t|
+    t.integer "family_id"
+    t.integer "profile_id"
+    t.index ["family_id"], name: "index_families_profiles_on_family_id", using: :btree
+    t.index ["profile_id"], name: "index_families_profiles_on_profile_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
