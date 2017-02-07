@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
+  namespace :my_family, module: :admin do
+    resources :users
+    root to: "users#index"
+  end
+
   devise_for :users
 
 
