@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  scope :family_members, ->(user) {where {}}
+  has_one :profile
 
   def is_admin?
     self.email == "dc@dc.fr"
