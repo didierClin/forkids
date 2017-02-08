@@ -5,10 +5,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :profiles
     root to: "users#index"
   end
 
   namespace :my_family, module: :admin do
+    resources :users
     resources :profiles
     root to: "profiles#index"
   end
