@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
 
   namespace :my_family, module: :admin do
-    resources :users
-    root to: "users#index"
+    resources :profiles
+    root to: "profiles#index"
   end
 
   devise_for :users

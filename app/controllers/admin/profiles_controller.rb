@@ -1,16 +1,16 @@
 module Admin
-  class UsersController < Admin::ApplicationController
+  class ProfilesController < Admin::ApplicationController
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
-    # def index
-    #   super
-    #   if current_user.is_admin?
-    #     @resources = User.all.page(params[:page]).per(10)
-    #   else
-    #     @resources = User.family_members(current_user).page(params[:page]).per(10)
-    #   end
-    # end
+    def index
+      super
+      if current_user.is_admin?
+        @resources = Profile.all.page(params[:page]).per(10)
+      else
+        @resources = Profile.family_members(current_user).page(params[:page]).per(10)
+      end
+    end
 
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
