@@ -8,7 +8,7 @@ module Admin
       if current_user.is_admin?
         @resources = User.all.page(params[:page]).per(10)
       else
-        @resources = User.family_members(current_user).page(params[:page]).per(10)
+        @resources = User.profile.family_members(current_user).page(params[:page]).per(10)
       end
     end
 

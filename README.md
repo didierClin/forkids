@@ -1,24 +1,13 @@
-# README
+# app pour créer une famille
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## modeles:
+- user : authentifie via devise
+- profile : profil de l'utilisateur
+- family : regroupement des personnes(profils)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## gems
+- devise   
+  https://github.com/plataformatec/devise
+- administrate   
+  https://github.com/thoughtbot/administrate
+  https://gorails.com/episodes/administrate
