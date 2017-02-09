@@ -8,6 +8,13 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
+# install grape APIs
+gem 'grape'
+# As the version Rails is 4.0+ and the application uses the default model layer
+# of ActiveRecord, you will want to use the hashie-forbidden_attributes gem. 
+# This gem disables the security feature of strong_params at the model layer,
+# allowing you the use of Grape's own params validation instead.
+gem 'hashie-forbidden_attributes'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server

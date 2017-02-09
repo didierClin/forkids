@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Forkids::API => '/'
+
   resources :profiles, only: [:index, :show, :new, :create, :update]
   resources :families, only: [:show, :new, :create, :update]
 
