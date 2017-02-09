@@ -16,10 +16,8 @@ ActiveRecord::Schema.define(version: 20170209084017) do
   enable_extension "plpgsql"
 
   create_table "families", force: :cascade do |t|
-    t.string   "father_name"
-    t.string   "mother_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "families_profiles", id: false, force: :cascade do |t|
