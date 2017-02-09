@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
   end
   
   def create
-    current_user.profile = Profile.new(profile_params)
+    current_user.profile.update(profile_params)
     current_user.save!
     redirect_to "/"
   end
