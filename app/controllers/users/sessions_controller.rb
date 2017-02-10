@@ -9,11 +9,8 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     # redirect to profile if necessary
-    if !current_user.profile || !current_user.profile.firstname
-      redirect_to '/profiles/new'
-    else
-      super
-    end
+    redirect_to '/profiles/new' and return unless current_user.is_profile_filled?
+    super
   end
 
   # DELETE /resource/sign_out

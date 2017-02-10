@@ -15,5 +15,9 @@ class User < ApplicationRecord
     self.email == "dc@dc.fr"
   end
 
+  def is_profile_filled?
+    !!self.profile && !!self.profile.lastname && !!self.profile.firstname
+  end
+
 
 end
