@@ -13,7 +13,7 @@
             <% end %>
           </span>
           <li><%= link_to "sign_out", destroy_user_session_path,  :method => :delete, class: "btn btn-info link_black" %></li>
-          <li><%= link_to 'admin',    admin_users_path,      class: "btn btn-info link_black" %></li>
+          <li><%= link_to 'admin',    admin_profiles_path,      class: "btn btn-info link_black" %></li>
         <% else %>
           <li><%= link_to 'sign_in',  new_user_session_path,      class: "btn btn-default link_black" %></li>
           <li><%= link_to 'sign_up',  new_user_registration_path, class: "btn btn-default link_black" %></li>
@@ -22,4 +22,3 @@
     </div>
   </nav>
 </div>
-
