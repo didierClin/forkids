@@ -7,9 +7,14 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    # redirect to profile if necessary
+    if !current_user.profile || !current_user.profile.firstname
+      redirect_to '/profiles/new'
+    else
+      super
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
