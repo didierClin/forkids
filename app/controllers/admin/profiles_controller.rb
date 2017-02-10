@@ -3,14 +3,28 @@ module Admin
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
+
     def index
-      super
+
+      search_term = params[:search].to_s.strip
+
       if current_user.is_admin?
-        @resources = Profile.all.page(params[:page]).per(10)
+        resources = Profile.all
       else
-        @resources = current_user.profile.family_members(current_user).page(params[:page]).per(10)
+        resources = Profile.family_members(current_user)
       end
+
+      resources = order.apply(resources)
+      resources = resources.page(params[:page]).per(records_per_page)
+      page = Administrate::Page::Collection.new(dashboard, order: order)
+
+      render locals: {
+        resources: resources,
+        search_term: search_term,
+        page: page,
+      }
     end
+
 
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
