@@ -11,3 +11,5 @@
 - administrate   
   https://github.com/thoughtbot/administrate
   https://gorails.com/episodes/administrate
+- devise_invitable
+  https://github.com/scambra/devise_invitable
