@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  mount Forkids::API => '/'
+#  mount Forkids::API => '/'
 
   resources :profiles, only: [:index, :show, :new, :create, :update]
   resources :families, only: [:show, :new, :create, :update]
@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 #  devise_for :users
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    invitations: 'users/invitations'
   }
 
   root to: "profiles#index"

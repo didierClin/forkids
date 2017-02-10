@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :invitable
 
-  before_validation(on: :create) do
+  before_validation(on: [:create, :update]) do
     self.profile = Profile.new
   end
 
