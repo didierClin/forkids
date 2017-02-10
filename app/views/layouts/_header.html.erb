@@ -12,6 +12,7 @@
               <%= current_user.profile.firstname[0] %> <%= current_user.profile.lastname[1] %>
             <% end %>
           </span>
+          <li><%= link_to 'invite',   new_user_invitation_path,   class: "btn btn-info link_black" %></li>
           <li><%= link_to "sign_out", destroy_user_session_path,  :method => :delete, class: "btn btn-info link_black" %></li>
           <li><%= link_to 'admin',    admin_profiles_path,      class: "btn btn-info link_black" %></li>
         <% else %>
